@@ -1,0 +1,37 @@
+{
+     "pageFormat": {
+         "characterPitch": "12",
+         "lineSpacing": "1/8",
+         "pageLength": 36,
+         "pageWidth": 160,
+         "usePageLengthFromPrinter": false
+     },
+     "template": {
+         "header": [ "                                                               Tanggal : ${tglPenjualan}",
+                     "                       ${alamatToko:40}Nama    : ${nama}",
+                     "                       ${noTelpToko:40}Alamat  : ${alamat}",
+                     "                       ${npwpToko:40}Telp    : ${noTelp}",
+                     "    ${noPenjualan} - ${jam}",
+                    "",
+                    ""
+         ],
+         "detail": [
+             {
+                "table": "table",
+                "border": false,
+                "columns": [
+                    { "caption": "", "source": "qty::center", "width": 6},
+                    { "caption": "", "source": "namaBarang", "width": 40},
+                    { "caption": "", "source": "berat::center", "width": 13 },
+                    { "caption": "", "source": "kadar::center", "width": 13 },
+                    { "caption": "", "source": "harga::right", "width": 15 }
+                ]
+             }
+         ],
+         "footer": [ "${terbilang:75}   ${total::right}",
+                     "",
+                     "",
+                     "                                         Sales : ${sales}"
+         ] 
+     }
+ }

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: transparent;" stylesheets="@../../Resource/MyTheme.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.excellentsystem.TokoEmasPadi.View.Dialog.BackupAndRestoreController">
+   <children>
+      <StackPane prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane onMouseClicked="#cancel" opacity="0.7" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: black;" />
+            <GridPane hgap="5.0" maxHeight="140.0" maxWidth="400.0" prefWidth="400.0" styleClass="dialog" vgap="5.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="5.0" minHeight="5.0" prefHeight="5.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label styleClass="label-header" text="Backup Dan Restore" GridPane.columnSpan="2" GridPane.halignment="CENTER" />
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="1.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="2">
+                     <children>
+                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#backup" prefHeight="40.0" text="Backup" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#restore" prefHeight="40.0" text="Restore" GridPane.columnSpan="2147483647" GridPane.rowIndex="3" />
+               </children>
+               <padding>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </padding>
+               <effect>
+                  <DropShadow color="#00000080" />
+               </effect>
+            </GridPane>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

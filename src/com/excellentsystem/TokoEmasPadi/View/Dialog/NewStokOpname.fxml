@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: transparent;" stylesheets="@../../Resource/MyTheme.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.excellentsystem.TokoEmasPadi.View.Dialog.NewStokOpnameController">
+   <children>
+      <StackPane prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane onMouseClicked="#close" opacity="0.69" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: black;" />
+            <GridPane hgap="7.0" maxHeight="220.0" maxWidth="400.0" styleClass="dialog" vgap="7.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="90.0" minWidth="10.0" prefWidth="90.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="5.0" minHeight="5.0" prefHeight="5.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+               <children>
+                  <Label styleClass="label-header" text="New Stok Opname" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" />
+                  <Label prefHeight="30.0" text="Kode Kategori" GridPane.rowIndex="2" />
+                  <ComboBox fx:id="kodeKategoriCombo" maxWidth="1.7976931348623157E308" onAction="#getJenis" prefHeight="40.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label prefHeight="30.0" text="Kode Jenis" GridPane.rowIndex="3" />
+                  <ComboBox fx:id="kodeJenisCombo" maxWidth="1.7976931348623157E308" prefHeight="40.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="1.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="4">
+                     <children>
+                        <Button fx:id="okButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="OK" />
+                        <Button mnemonicParsing="false" onAction="#close" prefHeight="40.0" prefWidth="100.0" text="Cancel" />
+                     </children>
+                  </HBox>
+               </children>
+               <effect>
+                  <DropShadow color="#00000080" />
+               </effect>
+            </GridPane>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

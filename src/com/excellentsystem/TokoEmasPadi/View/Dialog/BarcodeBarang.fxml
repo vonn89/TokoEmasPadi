@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: transparent;" stylesheets="@../../Resource/MyTheme.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.excellentsystem.TokoEmasPadi.View.Dialog.BarcodeBarangController">
+   <children>
+      <StackPane prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane onMouseClicked="#close" opacity="0.69" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: black;" />
+            <GridPane alignment="CENTER" hgap="7.0" maxHeight="574.0" maxWidth="500.0" styleClass="dialog" vgap="7.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="120.0" minWidth="10.0" prefWidth="120.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="5.0" minHeight="5.0" prefHeight="5.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="5.0" minHeight="5.0" prefHeight="5.0" vgrow="SOMETIMES" />
+                  <RowConstraints fillHeight="false" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+               <children>
+                  <Label styleClass="label-header" text="Barcode Barang" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" />
+                  <Label prefHeight="30.0" prefWidth="100.0" text="Sub Kategori" GridPane.rowIndex="2" />
+                  <Separator prefWidth="200.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="3" />
+                  <Label prefHeight="30.0" text="Nama Barang" GridPane.rowIndex="4" />
+                  <Label prefHeight="25.0" text="Nama Barcode" GridPane.rowIndex="5" />
+                  <Label text="Berat" GridPane.rowIndex="6" />
+                  <Label text="Berat Pembulatan" GridPane.rowIndex="7" />
+                  <Label text="Harga Pokok" GridPane.rowIndex="8" />
+                  <Label text="Keterangan" GridPane.rowIndex="9" />
+                  <Label text="Merk" GridPane.rowIndex="10" />
+                  <Label text="Persentase" GridPane.rowIndex="11" />
+                  <Label text="Jumlah Barang" GridPane.rowIndex="12" />
+                  <ComboBox fx:id="jenisCombo" editable="true" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="120.0" visibleRowCount="20" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="namaBarangField" prefHeight="40.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <TextField fx:id="namaBarcodeField" prefHeight="40.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <TextField fx:id="beratField" prefHeight="40.0" prefWidth="120.0" text="0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <TextField fx:id="beratPembulatanField" prefHeight="40.0" text="0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <TextField fx:id="hargaPokokField" prefHeight="40.0" prefWidth="120.0" text="0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                  <ComboBox fx:id="keteranganCombo" maxWidth="1.7976931348623157E308" prefHeight="40.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                  <TextField fx:id="merkField" prefHeight="40.0" prefWidth="120.0" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                  <TextField fx:id="persentaseField" prefHeight="40.0" text="0" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                  <TextField fx:id="jumlahField" maxWidth="1.7976931348623157E308" prefHeight="40.0" text="0" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="1.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="13">
+                     <children>
+                        <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#cancel" prefHeight="40.0" prefWidth="80.0" text="Reset" />
+                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#cariBarangDibeli" prefHeight="40.0" prefWidth="140.0" text="Cari Barang Dibeli" />
+                     </children>
+                  </HBox>
+                  <Button fx:id="saveButton" mnemonicParsing="false" onAction="#save" prefHeight="40.0" prefWidth="120.0" text="Simpan" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="13" />
+               </children>
+               <effect>
+                  <DropShadow color="#000000b2" />
+               </effect>
+            </GridPane>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

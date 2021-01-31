@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane id="AnchorPane" prefHeight="600" prefWidth="1024.0" styleClass="stage" stylesheets="@../../Resource/MyTheme.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.excellentsystem.TokoEmasPadi.View.Report.LaporanBatalTerimaGadaiController">
+    <children>
+      <GridPane hgap="7.0" layoutX="14.0" layoutY="126.0" vgap="7.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+         <children>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="8.0" text="Tanggal" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <DatePicker fx:id="tglMulaiPicker" layoutX="57.0" layoutY="4.0" onAction="#getGadai" prefWidth="140.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="0.0" />
+                  <Label layoutX="214.0" layoutY="8.0" text="-" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <DatePicker fx:id="tglAkhirPicker" layoutX="224.0" layoutY="4.0" onAction="#getGadai" prefWidth="140.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="225.0" AnchorPane.topAnchor="0.0" />
+                  <TextField fx:id="searchField" layoutX="831.0" layoutY="4.0" prefWidth="300.0" promptText="Search..." styleClass="search-field" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.rowIndex="2">
+               <children>
+                  <Label prefHeight="30.0" text="Total Berat" />
+                  <Label fx:id="totalBeratField" prefHeight="30.0" style="-fx-font-weight: bold;" text="0" />
+                  <Label prefHeight="30.0" text="Total Pinjaman" />
+                  <Label fx:id="totalPinjamanField" prefHeight="30.0" style="-fx-font-weight: bold;" text="0" />
+               </children>
+            </HBox>
+            <TreeTableView fx:id="gadaiTable" prefHeight="200.0" prefWidth="200.0" showRoot="false" tableMenuButtonVisible="true" GridPane.rowIndex="1">
+              <columns>
+                <TreeTableColumn fx:id="noGadaiColumn" prefWidth="75.0" text="No Gadai" />
+                <TreeTableColumn fx:id="tglGadaiColumn" prefWidth="75.0" text="Tgl Gadai" />
+                  <TreeTableColumn fx:id="tglBatalColumn" prefWidth="75.0" text="Tgl Batal" />
+                  <TreeTableColumn fx:id="userBatalColumn" prefWidth="75.0" text="User Batal" />
+                  <TreeTableColumn fx:id="kodeSalesColumn" prefWidth="75.0" text="Sales" />
+                  <TreeTableColumn fx:id="kodePelangganColumn" prefWidth="75.0" text="Kode Pelanggan" visible="false" />
+                  <TreeTableColumn fx:id="namaColumn" prefWidth="75.0" text="Nama" />
+                  <TreeTableColumn fx:id="alamatColumn" prefWidth="75.0" text="Alamat" visible="false" />
+                  <TreeTableColumn fx:id="noTelpColumn" prefWidth="75.0" text="No Telp" visible="false" />
+                  <TreeTableColumn fx:id="keteranganColumn" prefWidth="75.0" text="Keterangan" visible="false" />
+                  <TreeTableColumn fx:id="totalBeratColumn" prefWidth="75.0" text="Total Berat" />
+                  <TreeTableColumn fx:id="totalPinjamanColumn" prefWidth="75.0" text="Total Pinjaman" />
+                  <TreeTableColumn fx:id="lamaPinjamColumn" prefWidth="75.0" text="Lama Pinjam" />
+                  <TreeTableColumn fx:id="bungaPersenColumn" prefWidth="75.0" text="Bunga Persen" />
+                  <TreeTableColumn fx:id="bungaKompColumn" prefWidth="75.0" text="Bunga Komp" visible="false" />
+                  <TreeTableColumn fx:id="bungaRpColumn" prefWidth="75.0" text="Bunga Rp" visible="false" />
+                  <TreeTableColumn fx:id="jatuhTempoColumn" prefWidth="75.0" text="Jatuh Tempo" visible="false" />
+              </columns>
+               <columnResizePolicy>
+                  <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TreeTableView>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

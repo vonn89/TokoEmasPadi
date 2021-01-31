@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: transparent;" stylesheets="@../../Resource/MyTheme.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.excellentsystem.TokoEmasPadi.View.Dialog.PengaturanUmumController">
+   <children>
+      <StackPane prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane onMouseClicked="#cancel" opacity="0.7" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: black;" />
+            <GridPane hgap="5.0" maxHeight="450.0" maxWidth="400.0" styleClass="dialog" vgap="5.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="5.0" minHeight="5.0" prefHeight="5.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="5.0" minHeight="5.0" prefHeight="5.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label styleClass="label-serif" text="Nama Toko" GridPane.rowIndex="2" />
+                  <TextField fx:id="namaField" prefHeight="30.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="alamatField" prefHeight="30.0" prefWidth="400.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label styleClass="label-serif" text="Alamat" GridPane.rowIndex="3" />
+                  <Label styleClass="label-serif" text="No Telp" GridPane.rowIndex="5" />
+                  <TextField fx:id="noTelpField" prefHeight="30.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <AnchorPane prefHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="14">
+                     <children>
+                        <Button layoutX="183.0" layoutY="2.0" mnemonicParsing="false" onAction="#cancel" prefWidth="100.0" text="Cancel" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <Button layoutX="133.0" layoutY="-1.0" mnemonicParsing="false" onAction="#saveDataPerusahaan" prefWidth="100.0" text="Save" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="101.0" AnchorPane.topAnchor="-0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="25.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <Label text="Website" GridPane.rowIndex="6" />
+                  <TextField fx:id="emailField" prefHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <Label text="Kota" GridPane.rowIndex="4" />
+                  <TextField fx:id="kotaField" prefHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Label styleClass="label-header" text="Pengaturan Umum" GridPane.columnSpan="2" GridPane.halignment="CENTER" />
+                  <Label text="Prefix Barcode" GridPane.rowIndex="8" />
+                  <TextField fx:id="prefixBarcodeField" prefHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                  <TextField fx:id="printerPenjualanField" prefHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                  <TextField fx:id="printerGadaiField" prefHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                  <TextField fx:id="printerBarcodeField" prefHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                  <Label text="Printer Penjualan" GridPane.rowIndex="10" />
+                  <Label text="Printer Gadai" GridPane.rowIndex="11" />
+                  <Label text="Printer Barcode" GridPane.rowIndex="12" />
+                  <Label text="Server" GridPane.rowIndex="9" />
+                  <TextField fx:id="serverField" prefHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                  <Separator prefWidth="200.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="7" />
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="1.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="13">
+                     <children>
+                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#backup" prefHeight="30.0" text="Backup" HBox.hgrow="ALWAYS" />
+                        <Button layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#restore" prefHeight="30.0" text="Restore" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </padding>
+               <effect>
+                  <DropShadow color="#00000080" />
+               </effect>
+            </GridPane>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

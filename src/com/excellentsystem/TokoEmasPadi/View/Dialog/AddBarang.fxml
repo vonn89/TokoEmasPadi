@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: transparent;" stylesheets="@../../Resource/MyTheme.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.excellentsystem.TokoEmasPadi.View.Dialog.AddBarangController">
+   <children>
+      <StackPane prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane onMouseClicked="#close" opacity="0.69" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: black;" />
+            <GridPane hgap="7.0" maxHeight="400.0" maxWidth="400.0" styleClass="dialog" vgap="5.0">
+              <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="5.0" minHeight="5.0" prefHeight="5.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <padding>
+                  <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+               </padding>
+               <children>
+                  <Label fx:id="kodeBarcodeLabel" style="-fx-font-size: 24;" text="00000000" visible="false" GridPane.halignment="LEFT" GridPane.valignment="CENTER" />
+                  <Label fx:id="namaBarangLabel" style="-fx-font-size: 28; -fx-font-family: Georgia;" styleClass="label-header" text="Nama Barang" GridPane.halignment="CENTER" />
+                  <Label style="-fx-font-size: 14;" text="Berat" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <Label prefHeight="15.0" style="-fx-font-size: 14;" text="Jumlah" GridPane.rowIndex="4" GridPane.valignment="BOTTOM" />
+                  <Button fx:id="saveButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" style="-fx-font-size: 14;" text="Save" GridPane.rowIndex="9" />
+                  <TextField fx:id="hargaField" alignment="CENTER" prefHeight="50.0" style="-fx-font-size: 20;" text="0" GridPane.rowIndex="7" />
+                  <Label style="-fx-font-size: 14;" text="Harga" GridPane.rowIndex="6" />
+                  <TextField fx:id="beratField" alignment="CENTER" disable="true" prefHeight="50.0" style="-fx-font-size: 20;" text="0 Gr" GridPane.rowIndex="3" />
+                  <TextField fx:id="jumlahField" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="61.0" style="-fx-font-size: 20;" text="1" GridPane.rowIndex="5" />
+                  <Button mnemonicParsing="false" onAction="#minus" prefHeight="50.0" prefWidth="50.0" GridPane.halignment="LEFT" GridPane.rowIndex="5">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Resource/Minus_48px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#plus" prefHeight="50.0" prefWidth="50.0" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Resource/Plus_48px_1.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+               <effect>
+                  <DropShadow color="#0000004d" />
+               </effect>
+            </GridPane>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

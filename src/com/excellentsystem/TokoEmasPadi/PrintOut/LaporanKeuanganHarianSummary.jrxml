@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="LaporanKeuanganHarianSummary" pageWidth="209" pageHeight="1441" columnWidth="169" leftMargin="20" rightMargin="20" topMargin="0" bottomMargin="0" isIgnorePagination="true" uuid="4dc9bdcd-a3aa-403b-b725-a0f7c62ae304">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="style1">
+		<box leftPadding="3" rightPadding="3">
+			<topPen lineWidth="1.0"/>
+			<bottomPen lineWidth="1.0"/>
+		</box>
+	</style>
+	<parameter name="tanggal" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="saldoAwal" class="java.lang.Double" isForPrompting="false">
+		<defaultValueExpression><![CDATA[0.0]]></defaultValueExpression>
+	</parameter>
+	<parameter name="namaToko" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["Toko Emas Gunung Mas"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="alamatToko" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["Kios Pasar No.6 Pecangaan"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="noTelpToko" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["(Sebelah Barat Pasar)"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select kategori,tipe_transaksi,sum(jumlah_rp) from tt_keuangan  group by kategori order by tipe_transaksi]]>
+	</queryString>
+	<field name="kategori" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tipe_transaksi" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sum(jumlah_rp)" class="java.lang.Double"/>
+	<variable name="debet" class="java.lang.Double">
+		<variableExpression><![CDATA[($F{tipe_transaksi}.equalsIgnoreCase("D") ? $F{sum(jumlah_rp)} : 0)]]></variableExpression>
+	</variable>
+	<variable name="kredit" class="java.lang.Double">
+		<variableExpression><![CDATA[( $F{tipe_transaksi}.equalsIgnoreCase("K") ? $F{sum(jumlah_rp)} : 0 )]]></variableExpression>
+	</variable>
+	<variable name="totaldebet" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$V{debet}]]></variableExpression>
+	</variable>
+	<variable name="totalkredit" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$V{kredit}]]></variableExpression>
+	</variable>
+	<variable name="saldoakhir" class="java.lang.Double">
+		<variableExpression><![CDATA[$P{saldoAwal}+$V{totaldebet}-$V{totalkredit}]]></variableExpression>
+	</variable>
+	<title>
+		<band height="80" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="35" width="169" height="16" uuid="d8dd206d-f1ac-4728-b902-c7b37c61c70f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="12" isBold="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Laporan Keuangan Harian]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="52" width="104" height="15" uuid="63302894-2822-4bcb-9688-7221c6cfc398"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{tanggal}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="51" width="169" height="1" uuid="51a20155-db2f-4492-8186-d17370e2fc6b"/>
+				<graphicElement>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="0" y="22" width="169" height="11" uuid="84eb96db-a84e-49ce-9ebf-3aa6c6d7f0ee"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{noTelpToko}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="169" height="13" uuid="33f2b608-d8de-428f-89e3-961239c33334"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{namaToko}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="12" width="169" height="11" uuid="be1318b0-9f1d-4782-868f-6dd5f2919f34"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{alamatToko}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="34" width="169" height="1" uuid="f6d76f7c-fd33-40eb-90b2-6a8ef64870dd"/>
+				<graphicElement>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="0" y="67" width="100" height="13" uuid="39c0394e-1d81-4f42-a61c-9d9fdceb98fd"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Saldo Awal]]></text>
+			</staticText>
+			<textField pattern="#,##0">
+				<reportElement x="99" y="67" width="70" height="13" uuid="486baf75-0b59-4869-a0dd-582814a691bc"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{saldoAwal}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="11" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="135" height="11" uuid="47ab9f47-1a4e-43e1-a479-25df3ac26384"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{kategori}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement x="99" y="0" width="70" height="11" uuid="b8eea0c1-4b33-4fae-96d7-96a87ab3e18d">
+					<printWhenExpression><![CDATA[$V{debet}!=0]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{debet}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0;(-#,##0)">
+				<reportElement x="99" y="0" width="70" height="11" uuid="db6e3139-8b81-4c72-8377-4303934c4cb0">
+					<printWhenExpression><![CDATA[$V{kredit}!=0]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{kredit}*-1]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="17">
+			<textField pattern="#,##0">
+				<reportElement x="99" y="2" width="70" height="15" uuid="570557a1-0ef0-4e0d-aa6d-b7dbedeb4fb6"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{saldoakhir}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="2" width="100" height="15" uuid="f9118aaf-a12b-4631-8a44-f64cbe548927"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Saldo Akhir]]></text>
+			</staticText>
+			<line>
+				<reportElement x="99" y="2" width="70" height="1" uuid="d7f615c4-7af2-4ba6-9acc-b67474a95583"/>
+			</line>
+		</band>
+	</columnFooter>
+</jasperReport>
